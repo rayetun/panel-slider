@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900|Nunito+Sans:400,600,700,900');
+body,
+html {
+	font-family: 'Nunito Sans', sans-serif;
+	color: #000000;
+	margin: 0px;
+	font-size: 16px;
+	line-height: 1.6
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 15px;
+	font-weight: 700;
+}
+
+body{
+	display:flex;
+	height:100vh;
+	align-items:center;
+	justify-content:center;
+	overflow: hidden;
+}
+.slide{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 90vw;
+	height:80vh;
+	border-radius: 50px;
+	color: #fff;
+	cursor: pointer;
+	flex: 0.5;
+	margin: 0 10px;
+	position: relative;
+	transition: flex 0.7s ease-in;
+}
+.slide:before{
+	position: absolute;
+	left:0;
+	top: 0;
+	width:100%;
+	height:100%;
+	content: "";
+	background: #000;
+	opacity: 0.7;
+	border-radius: 50px;
+}
+.slide.active:before{
+	opacity: 0;
+	transition: opacity 0.3s ease-in 0.4s;
+}
+.slide h4{
+	position: absolute;
+	bottom: 20px;
+	left: 15px;
+	font-size: 18px;
+	opacity: 0;
+}
+.slide.active{
+	flex: 5;
+}
+.slide.active h4{
+	opacity: 1;
+	transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width:480px) {
+	.slider{
+		width: 100vw;
+	}
+	.slide:nth-of-type(4),
+	.slide:nth-of-type(5){
+		display: none;
+	}
+}
